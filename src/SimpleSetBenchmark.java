@@ -1,6 +1,14 @@
 import java.util.*;
 
 public class SimpleSetBenchmark {
+	
+	/**
+	 * Create list of random "strings" to return
+	 * @param factor how many times each element is added
+	 * @param unique # different/unique elements to add
+	 * @return list of factor*unique elements, with 
+	 * # different elements equal to unique
+	 */
 	static ArrayList<String> getBenchData(int factor, int unique) {
 		ArrayList<String> ret = new ArrayList<>();
 		
@@ -13,6 +21,12 @@ public class SimpleSetBenchmark {
 		return ret;
 	}
 	
+	/**
+	 * Add all elements of data to set
+	 * @param dat list of strings to add to set
+	 * @param set being added to
+	 * @return time to add all elements
+	 */
 	static double benchmarkArray(ArrayList<String> data, ArraySet<String> set) {
 		double start = System.nanoTime();
 		for(String s : data) {
@@ -21,6 +35,13 @@ public class SimpleSetBenchmark {
 		double end = System.nanoTime();
 		return (end-start)/1e9;
 	}
+	
+	/**
+	 * Add all elements of data to set
+	 * @param dat list of strings to add to set
+	 * @param set being added to
+	 * @return time to add all elements
+	 */
 	static double benchmarkHash(ArrayList<String> data, SimpleHashSet<String> set) {
 		double start = System.nanoTime();
 		for(String s : data) {
