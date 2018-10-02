@@ -8,7 +8,7 @@ import java.util.*;
 
  */
 
-public class ArraySet<Type> {
+public class ArraySet<Type> implements Iterable<Type>{
 	
 	private ArrayList<Type> myElements;
 	

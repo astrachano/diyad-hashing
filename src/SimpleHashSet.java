@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class SimpleHashSet<Type> {
-	private ArrayList<ArrayList<Type>> myElements;
-	int mySize;
+	protected ArrayList<ArrayList<Type>> myElements;
+	protected int mySize;
 	public static int BUCKET_SIZE = 10000;
 	
 	private int getHash(Type elt){
